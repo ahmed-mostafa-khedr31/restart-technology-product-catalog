@@ -37,7 +37,7 @@ describe('debounced search race handling', () => {
     await waitFor(() => {
       expect(screen.getByTestId('location-search')).toHaveTextContent('q=ph')
     })
-    await user.type(input, 'one', { delay: 0 })
+    await user.type(input, 'one')
 
     expect(await screen.findByRole('heading', { name: 'iPhone 15 Pro' })).toBeInTheDocument()
     await delay(900)
